@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-04-06T09:41:24.535Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>My Gallery</title>
+    <link href="http://example.com/2022/04/06/My-Gallery/"/>
+    <id>http://example.com/2022/04/06/My-Gallery/</id>
+    <published>2022-04-06T09:41:24.000Z</published>
+    <updated>2022-04-06T09:41:24.535Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>认识python及在工作中初步应用</title>
+    <link href="http://example.com/2022/04/06/2022.4.6/"/>
+    <id>http://example.com/2022/04/06/2022.4.6/</id>
+    <published>2022-04-06T05:35:23.134Z</published>
+    <updated>2022-04-07T06:30:06.463Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="连接天擎"><a href="#连接天擎" class="headerlink" title="连接天擎"></a>连接天擎</h2><h3 id="结果的可视化–统计图"><a href="#结果的可视化–统计图" class="headerlink" title="结果的可视化–统计图"></a>结果的可视化–统计图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.arange(<span class="number">0</span>,<span class="number">12.1</span>,<span class="number">0.1</span>)</span><br><span class="line">y = np.sin(x)</span><br><span class="line">plt.plot(x,y)</span><br></pre></td></tr></table></figure><h3 id="线的设置颜色和线型的设置"><a href="#线的设置颜色和线型的设置" class="headerlink" title="线的设置颜色和线型的设置"></a>线的设置颜色和线型的设置</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(x, y, <span class="string">&#x27;xx&#x27;</span>)plt.plot(x,y,<span class="string">&#x27;r&#x27;</span>)<span class="comment">#plt.plot(x,y,&#x27;r--&#x27;)#plt.plot(x,y,&#x27;r:&#x27;)#plt.plot(x,y,&#x27;r-.&#x27;)​plt.scatter(x,y)</span></span><br></pre></td></tr></table></figure><h4 id="字的设置"><a href="#字的设置" class="headerlink" title="字的设置"></a>字的设置</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(x,y,color=<span class="string">&#x27;lime&#x27;</span>, linestyle=<span class="string">&#x27;&#x27;</span>, linewidth=<span class="number">4</span>,\marker=<span class="string">&#x27;^&#x27;</span>, markerfacecolor=<span class="string">&#x27;black&#x27;</span>, markeredgecolor=<span class="string">&#x27;r&#x27;</span>,\markersize=<span class="number">5</span>,markeredgewidth=<span class="number">1</span>,label=<span class="string">&#x27;Normal&#x27;</span>,zorder=<span class="number">2</span>) <span class="comment">#o,^,v)</span></span><br><span class="line"><span class="comment">#plt.scatter(x,y)ax1 = plt.gca()</span></span><br><span class="line">ax1.set_title(<span class="string">&#x27;My title&#x27;</span>, fontname=<span class="string">&#x27;Arial&#x27;</span>, fontsize=<span class="number">20</span>,\weight=<span class="string">&#x27;bold&#x27;</span>, style=<span class="string">&#x27;italic&#x27;</span>)ax1.set_xlabel(<span class="string">&#x27;time (UTC)&#x27;</span>)ax1.set_ylabel(<span class="string">&#x27;T($^o$C)&#x27;</span>)​ <span class="comment"># 设置刻度的位置</span></span><br><span class="line">ax1.set_xticks([<span class="number">0</span>,<span class="number">2.5</span>,<span class="number">7</span>,<span class="number">11</span>])ax1.set_xticklabels([<span class="string">&#x27;J&#x27;</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;N&#x27;</span>,<span class="string">&#x27;E&#x27;</span>])ax1.tick_params(axis=<span class="string">&#x27;both&#x27;</span>,direction=<span class="string">&#x27;in&#x27;</span>, color=<span class="string">&#x27;blue&#x27;</span>, length=<span class="number">10</span>, width=<span class="number">2</span>)​plt.plot(x+<span class="number">2</span>,y, linewidth=<span class="number">4</span>,label=<span class="string">&#x27;Strange&#x27;</span>,zorder=<span class="number">1</span>)​_ = plt.legend(loc=<span class="string">&#x27;best&#x27;</span>) <span class="comment"># lower left</span></span><br></pre></td></tr></table></figure><h3 id="子图的绘制"><a href="#子图的绘制" class="headerlink" title="子图的绘制"></a>子图的绘制</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fig, ax = plt.subplots(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">ax[<span class="number">1</span>].plot(x, y)ax[<span class="number">0</span>].plot(x+<span class="number">2</span>, y,color=<span class="string">&#x27;r&#x27;</span>) <span class="comment"># 设定坐标轴的范围,对齐</span></span><br><span class="line">ax[<span class="number">1</span>].set_xlim([<span class="number">0</span>,<span class="number">15</span>])ax[<span class="number">0</span>].set_xlim([<span class="number">0</span>,<span class="number">15</span>])​fig = plt.figure(figsize = (<span class="number">8</span>,<span class="number">4</span>)) <span class="comment">#画布大小为8*4</span></span><br><span class="line">​x2 = np.arange(<span class="number">1</span>,<span class="number">100</span>,<span class="number">1</span>)</span><br><span class="line">y2 = np.exp(x2)</span><br><span class="line">plt.plot(x2,y2)​<span class="comment"># 设置指数坐标轴ax = plt.gca()</span></span><br><span class="line">ax.set_yscale(<span class="string">&#x27;log&#x27;</span>)​<span class="comment"># 双坐标轴ax2 = ax.twinx()</span></span><br><span class="line"><span class="comment">#ax2.plot(x,y,&#x27;ro&#x27;)​ax3 = ax2.twiny()</span></span><br><span class="line">ax3.plot(x,y,<span class="string">&#x27;ro&#x27;</span>)<span class="comment">#防止图片部分缺失，采用紧致总局#plt.tight_layout()# 保存pngplt.savefig(&#x27;./myplt.png&#x27;, dpi=300)</span></span><br></pre></td></tr></table></figure><h3 id="结果的可视化–分布图"><a href="#结果的可视化–分布图" class="headerlink" title="结果的可视化–分布图"></a>结果的可视化–分布图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">ar = np.recfromcsv(<span class="string">&#x27;20180101.csv&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(ar[<span class="number">2</span>])</span><br><span class="line">ar2 = np.array([<span class="built_in">list</span>(a) <span class="keyword">for</span> a <span class="keyword">in</span> ar], np.<span class="built_in">float</span>)</span><br><span class="line">ar2.shape</span><br><span class="line">ar2[:,<span class="number">4</span>]</span><br><span class="line">lat = ar2[:,<span class="number">1</span>]</span><br><span class="line">lon = ar2[:,<span class="number">2</span>]</span><br><span class="line">t = ar2[:,<span class="number">4</span>]/<span class="number">10</span></span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><figcaption><span>python制图</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">from matplotlib.colors import ListedColormap, BoundaryNorm</span><br><span class="line">cmap = ListedColormap([&#x27;b&#x27;, &#x27;r&#x27;])</span><br><span class="line"># BoundaryNorm 会根据cmap把不同的区间映射到对应的颜色</span><br><span class="line">norm = BoundaryNorm([-40, 0, 40], cmap.N)</span><br><span class="line"># 利用normlize来标准化颜色的值</span><br><span class="line">#cmap = plt.get_cmap(&#x27;Spectral&#x27;)</span><br><span class="line">#norm = plt.Normalize(vmin=-40, vmax=40)</span><br><span class="line">fig, ax = plt.subplots(figsize=(10,8))</span><br><span class="line"># c代表颜色的值,cmap是色带</span><br><span class="line">ax.scatter(lon, lat, s=30, c=t, cmap=cmap, marker=&#x27;o&#x27;, edgecolors = &#x27;w&#x27;, alpha = 1, norm=norm)</span><br><span class="line">ax.set_xlabel(&#x27;lon&#x27;, fontsize=15)</span><br><span class="line">ax.set_ylabel(&#x27;lat&#x27;, fontsize=15)</span><br><span class="line">ax.set_title(&#x27;T($^o$C)&#x27;)</span><br><span class="line">ax.grid(True)</span><br><span class="line">fig.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure><p><img src="/image_20220406_pythonimg.png" alt="img"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;连接天擎&quot;&gt;&lt;a href=&quot;#连接天擎&quot; class=&quot;headerlink&quot; title=&quot;连接天擎&quot;&gt;&lt;/a&gt;连接天擎&lt;/h2&gt;&lt;h3 id=&quot;结果的可视化–统计图&quot;&gt;&lt;a href=&quot;#结果的可视化–统计图&quot; class=&quot;headerlink&quot; titl</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>介绍</title>
+    <link href="http://example.com/2022/04/06/hello-world/"/>
+    <id>http://example.com/2022/04/06/hello-world/</id>
+    <published>2022-04-06T05:35:23.134Z</published>
+    <updated>2022-04-06T08:52:20.789Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>云众2022年元旦活动</title>
+    <link href="http://example.com/2022/04/06/2022.1.1/"/>
+    <id>http://example.com/2022/04/06/2022.1.1/</id>
+    <published>2022-04-06T05:35:23.134Z</published>
+    <updated>2022-04-06T13:04:41.846Z</updated>
+    
+    <content type="html"><![CDATA[<p>2021年12月31日，一年中最后的一天。疫情期间，公司为了庆祝元旦，由团建委员会组织大家在公司开展一些内部活动。</p><h2 id="筷子夹溜溜"><a href="#筷子夹溜溜" class="headerlink" title="筷子夹溜溜"></a>筷子夹溜溜</h2><p align="center"><img src='IMG209.jpg' width="80%" height="80%" align="middle" ></p><h2 id="飞镖"><a href="#飞镖" class="headerlink" title="飞镖"></a>飞镖</h2><p align="center"><img src='IMG209.jpg' width=450 height=600 ></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;2021年12月31日，一年中最后的一天。疫情期间，公司为了庆祝元旦，由团建委员会组织大家在公司开展一些内部活动。&lt;/p&gt;
+&lt;h2 id=&quot;筷子夹溜溜&quot;&gt;&lt;a href=&quot;#筷子夹溜溜&quot; class=&quot;headerlink&quot; title=&quot;筷子夹溜溜&quot;&gt;&lt;/a&gt;筷子夹溜溜&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
